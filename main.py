@@ -197,7 +197,7 @@ def find_matching_recipes(detected_ingredient, recipes, max_cook_time=None, diet
         if max_cook_time is not None and recipe['Cook Time (min)'] > max_cook_time:
             continue
 
-        # Check dietary preferences (assuming 'diet' column exists in CSV)
+        # Check dietary preferences ( 'diet' column exists in CSV)
         if dietary_prefs and 'diet' in recipe:
             recipe_diet = recipe['diet'].lower().split() if recipe['diet'] else []
             if not any(pref.lower() in recipe_diet for pref in dietary_prefs):
